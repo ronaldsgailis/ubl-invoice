@@ -2,10 +2,9 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-
-use DateTime;
 use InvalidArgumentException;
 
 class SettlementPeriod implements XmlSerializable
@@ -13,37 +12,23 @@ class SettlementPeriod implements XmlSerializable
     private $startDate;
     private $endDate;
 
-    /**
-     * @return DateTime
-     */
-    public function getStartDate(): ?DateTime
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
-    /**
-     * @param DateTime $startDate
-     * @return SettlementPeriod
-     */
-    public function setStartDate(DateTime $startDate): SettlementPeriod
+    public function setStartDate(DateTimeInterface $startDate): SettlementPeriod
     {
         $this->startDate = $startDate;
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getEndDate(): ?DateTime
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
 
-    /**
-     * @param DateTime $endDate
-     * @return SettlementPeriod
-     */
-    public function setEndDate(DateTime $endDate): SettlementPeriod
+    public function setEndDate(DateTimeInterface $endDate): SettlementPeriod
     {
         $this->endDate = $endDate;
         return $this;

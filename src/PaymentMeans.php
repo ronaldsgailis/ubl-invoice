@@ -2,9 +2,9 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-use DateTime;
 
 class PaymentMeans implements XmlSerializable
 {
@@ -41,19 +41,12 @@ class PaymentMeans implements XmlSerializable
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getPaymentDueDate(): ?DateTime
+    public function getPaymentDueDate(): ?DateTimeInterface
     {
         return $this->paymentDueDate;
     }
 
-    /**
-     * @param DateTime $paymentDueDate
-     * @return PaymentMeans
-     */
-    public function setPaymentDueDate(?DateTime $paymentDueDate): PaymentMeans
+    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate): PaymentMeans
     {
         $this->paymentDueDate = $paymentDueDate;
         return $this;

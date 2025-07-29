@@ -2,9 +2,9 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-use DateTime;
 
 class Delivery implements XmlSerializable
 {
@@ -13,18 +13,18 @@ class Delivery implements XmlSerializable
     private $deliveryParty;
 
     /**
-     * @return DateTime
+     * @return DateTimeInterface
      */
-    public function getActualDeliveryDate()
+    public function getActualDeliveryDate(): DateTimeInterface
     {
         return $this->actualDeliveryDate;
     }
 
     /**
-     * @param DateTime $actualDeliveryDate
+     * @param DateTimeInterface $actualDeliveryDate
      * @return Delivery
      */
-    public function setActualDeliveryDate($actualDeliveryDate): Delivery
+    public function setActualDeliveryDate(DateTimeInterface $actualDeliveryDate): Delivery
     {
         $this->actualDeliveryDate = $actualDeliveryDate;
         return $this;

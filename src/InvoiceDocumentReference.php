@@ -2,11 +2,10 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
+use InvalidArgumentException;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-
-use DateTime;
-use InvalidArgumentException;
 
 class InvoiceDocumentReference implements XmlSerializable
 {
@@ -24,7 +23,7 @@ class InvoiceDocumentReference implements XmlSerializable
 
     /**
      * Set the id of the invoice that is being credited
-     * 
+     *
      * @return InvoiceDocumentReference
      */
     public function setOriginalInvoiceId(string $invoiceRef): InvoiceDocumentReference
@@ -33,22 +32,12 @@ class InvoiceDocumentReference implements XmlSerializable
         return $this;
     }
 
-    /**
-     * Get the issue date of the original invoice that is being credited
-     * 
-     * @return ?DateTime
-     */
-    public function getIssueDate(): ?DateTime
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
-    /**
-     * Set the issue date of the original invoice that is being credited
-     * 
-     * @return InvoiceDocumentReference
-     */
-    public function setIssueDate(DateTime $issueDate): InvoiceDocumentReference
+    public function setIssueDate(DateTimeInterface $issueDate): InvoiceDocumentReference
     {
         $this->issueDate = $issueDate;
         return $this;

@@ -2,7 +2,7 @@
 
 namespace NumNum\UBL;
 
-use DateTime;
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
 
@@ -38,19 +38,12 @@ class OrderReference implements XmlSerializable
         return $this->salesOrderId;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getIssueDate(): ?DateTime
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
-    /**
-     * @param DateTime $issueDate
-     * @return OrderReference
-     */
-    public function setIssueDate(DateTime $issueDate): OrderReference
+    public function setIssueDate(DateTimeInterface $issueDate): OrderReference
     {
         $this->issueDate = $issueDate;
         return $this;

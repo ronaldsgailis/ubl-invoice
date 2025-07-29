@@ -2,9 +2,9 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-use DateTime;
 use InvalidArgumentException;
 
 class InvoicePeriod implements XmlSerializable
@@ -13,37 +13,23 @@ class InvoicePeriod implements XmlSerializable
     private $endDate;
     private $descriptionCode;
 
-    /**
-     * @return DateTime
-     */
-    public function getStartDate(): ?DateTime
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
-    /**
-     * @param DateTime $startDate
-     * @return InvoicePeriod
-     */
-    public function setStartDate(?DateTime $startDate): InvoicePeriod
+    public function setStartDate(?DateTimeInterface $startDate): InvoicePeriod
     {
         $this->startDate = $startDate;
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getEndDate(): ?DateTime
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
 
-    /**
-     * @param DateTime $endDate
-     * @return InvoicePeriod
-     */
-    public function setEndDate(?DateTime $endDate): InvoicePeriod
+    public function setEndDate(?DateTimeInterface $endDate): InvoicePeriod
     {
         $this->endDate = $endDate;
         return $this;

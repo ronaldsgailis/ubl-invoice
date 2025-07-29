@@ -2,10 +2,9 @@
 
 namespace NumNum\UBL;
 
+use DateTimeInterface;
 use Sabre\Xml\Writer;
 use Sabre\Xml\XmlSerializable;
-
-use DateTime;
 use InvalidArgumentException;
 
 class Invoice implements XmlSerializable
@@ -120,37 +119,23 @@ class Invoice implements XmlSerializable
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getIssueDate(): ?DateTime
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
-    /**
-     * @param DateTime $issueDate
-     * @return Invoice
-     */
-    public function setIssueDate(DateTime $issueDate): Invoice
+    public function setIssueDate(DateTimeInterface $issueDate): Invoice
     {
         $this->issueDate = $issueDate;
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getDueDate(): ?DateTime
+    public function getDueDate(): ?DateTimeInterface
     {
         return $this->dueDate;
     }
 
-    /**
-     * @param DateTime $dueDate
-     * @return Invoice
-     */
-    public function setDueDate(DateTime $dueDate): Invoice
+    public function setDueDate(DateTimeInterface $dueDate): Invoice
     {
         $this->dueDate = $dueDate;
         return $this;
@@ -203,19 +188,12 @@ class Invoice implements XmlSerializable
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getTaxPointDate(): ?DateTime
+    public function getTaxPointDate(): ?DateTimeInterface
     {
         return $this->taxPointDate;
     }
 
-    /**
-     * @param DateTime $taxPointDate
-     * @return Invoice
-     */
-    public function setTaxPointDate(DateTime $taxPointDate): Invoice
+    public function setTaxPointDate(DateTimeInterface $taxPointDate): Invoice
     {
         $this->taxPointDate = $taxPointDate;
         return $this;
@@ -625,7 +603,7 @@ class Invoice implements XmlSerializable
             throw new InvalidArgumentException('Missing invoice id');
         }
 
-        if (!$this->issueDate instanceof DateTime) {
+        if (!$this->issueDate instanceof DateTimeInterface) {
             throw new InvalidArgumentException('Invalid invoice issueDate');
         }
 

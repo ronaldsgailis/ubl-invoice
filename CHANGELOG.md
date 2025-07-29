@@ -1,3 +1,9 @@
+# Changelog for <nextversion>
+
+### New features & improvements
+
+- Use DateTimeInterface instead of DateTime
+
 # Changelog for v1.21.3
 
 #### Bug fixes
